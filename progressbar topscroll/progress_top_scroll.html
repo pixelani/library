@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Bar Top Design</title>
+    
+
+
+<!-- 프로그레스 바 끝 -->
+
+
+<!-- root -->
+<style>
+    :root{
+    /* Main Color */
+	--color-purple: #5734DA;	
+	--color-blue: #0078CC;
+	--color-mint: #1EB7CD;
+  	--color-silver: #DDDDDD;
+	
+	/* Sub Color  */
+	--color-aqua: #55E7D3;
+	--color-lime: #75EF75;
+	--color-violet: #9384FD;
+	--color-pink: #E390FD;
+	--color-coral: #FD8F82;
+}
+</style>
+
+<!-- progress bar -->
+<style>
+/* 1-2-1 */
+.progress-container {
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	height: 10px; /* height: 0px; 으로 하면 안 보임 */
+	background-color: #bbb;
+	z-index: 9997;
+}
+.progress-bar {
+	position: fixed;
+	top: 0px;
+	width: 0%;
+	height: 10px;
+	background: linear-gradient(to right,rgba(130,60,180,1) 0%, rgba(250,30,30,1) 50vw, rgba(250,180,70,1) 100vw);
+	/* background: linear-gradient(to right, white, gray 50vw, black 100vw); */
+	/* background: linear-gradient(90deg, #00C9FF 10%, #92FE9D 90%); */
+	/* background: #191970; */
+	border-radius: 0px 10px 10px 0px;
+	/* border-radius: 10px; */
+}
+.percent {
+	/* display: none; 을 추가 하면 안 보임 */
+	position: absolute;
+	top: 10px;
+	right: 25px;
+	display: block;
+	font-size: 20px;
+	font-weight: 700;
+	color: #000;
+	text-align: center;
+}
+.percent::after {
+	/* display: none; 을 추가 하면 안 보임 */
+	content: "%";
+	position: absolute;
+	bottom: 2px;
+	right: -15px;
+	font-size: 12px;
+	font-weight: 500;
+	opacity: 0.5;
+}
+
+
+
+
+
+
+
+</style>
+</head>
+<body>
+
+    <!-- 가로형 프로그레스 바 시작 -->
+
+
+<div class="progress-container">
+	<div class="progress-bar" id="myProgressBar"></div>
+</div>
+
+<script>
+
+
+    // 스크롤에 따른 progress-bar 업데이트 함수
+    function updateProgressBar() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("myProgressBar").style.width = scrolled + "%";
+    }
+
+    // 스크롤 이벤트에 함수 연결
+    window.onscroll = function() {
+        updateProgressBar();
+    };
+	</script>
+
+    
+<!-- 프로그레스 바 끝 -->
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- color bar -->
+    <div id="bar">
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+
+
+</body>
+</html>
